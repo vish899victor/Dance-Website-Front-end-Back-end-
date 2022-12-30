@@ -1,0 +1,35 @@
+extends base.pug
+
+block scripts
+      script(src='/static/index.js')
+
+block style
+    style 
+        include ../static/style.css
+
+block content
+    nav#navbar
+        ul
+            div#logo
+                img(src="/static/img/logo.png")
+                | HDA
+            li #[a(href="/") Home]
+            li #[a(href="/about") About]
+            li #[a(href="/Services") Services]
+            li #[a(href="/ClassInfo") Class Info]
+            li #[a(href="/contact") Contact Us]
+    
+    form(action= "/contact", method= "post", class= "myForm")
+        h1 Contact Us
+        <input type="text" class= “myInput” name="name" placeholder="Enter your name">
+        <input type="phone" class= “myInput” name="phone" placeholder="Enter your no.">
+        <input type="email" class= “myInput” name="email" placeholder="Enter your email">
+        <input type="text" class= “myInput” name="address" placeholder="Enter your address">
+        <input type="text" class= “myInput” name="myConcern" placeholder="Your concern">
+        button#btn 
+        |   Submit
+    
+block foot 
+    footer#footer
+        | Copyright © 2019 HarryAcademy.com | All Rights Reserved
+
